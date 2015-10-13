@@ -9,5 +9,5 @@
  * @author LabGSG-15
  */
 public class NewClass {
-    
+    private String halo;
 }
