@@ -9,9 +9,9 @@ package service;
  *
  * @author LabGSG-15
  */
-public class HelloService {
+public class LoginService {
     
-    public static String sayHello(String name, String age) {
-        return "Hello " + name + "!"+"<br> Your Age : "+age;
+    public static String sayHello(String name) {
+        return "Welcome " + name + "!";
     }
 }
