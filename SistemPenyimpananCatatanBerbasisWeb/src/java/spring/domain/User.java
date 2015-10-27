@@ -26,7 +26,9 @@ public class User {
    private String pass;
    @Column(name = "user_phone", nullable = false, length = 20)
    private String phone;
-
+   @Column(name = "user_akses", nullable = false, length = 20)
+   private String akses;
+   
     public int getId() {
         return id;
     }
@@ -55,18 +57,24 @@ public class User {
         return phone;
     }
 
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+    
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
 
     public String getPass() {
         return pass;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public String getAkses() {
+        return akses;
     }
 
-   
+    public void setAkses(String akses) {
+        this.akses = akses;
+    }
+
 }
