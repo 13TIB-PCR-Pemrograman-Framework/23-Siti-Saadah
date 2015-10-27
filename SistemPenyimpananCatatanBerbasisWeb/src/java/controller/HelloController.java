@@ -10,24 +10,24 @@ import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import service.LoginService;
+import service.HelloService;
 
 /**
  *
  * @author LabGSG-15
  */
-public class LoginController extends SimpleFormController {
+public class HelloController extends SimpleFormController {
     
-    public LoginController() {
+    public HelloController() {
         //Initialize controller properties here or 
         //in the Web Application Context
 
         
         
-    setCommandClass(Login.class);  
-    setCommandName("log");
-    setSuccessView("loginView");
-    setFormView("formLoginView");
+    setCommandClass(Name.class);  
+    setCommandName("name");
+    setSuccessView("helloView");
+    setFormView("nameView");
 
     }
     
@@ -38,10 +38,10 @@ public class LoginController extends SimpleFormController {
             Object command,
             BindException errors) throws Exception {
 
-        Login log = (Login) command;
+        Name name = (Name) command;
         
         ModelAndView mv = new ModelAndView(getSuccessView());
-        mv.addObject("helloMessage", helloService.sayHello(log.getUsername()));
+        mv.addObject("helloMessage", helloService.sayHello(name.getValue(),name.getAge()));
        
         return mv;
 }
@@ -60,9 +60,9 @@ public class LoginController extends SimpleFormController {
      }
      */
 
-    private LoginService helloService;
+    private HelloService helloService;
     
-     public void setHelloService(LoginService helloService) {
+     public void setHelloService(HelloService helloService) {
     this.helloService = helloService;
 }
 }

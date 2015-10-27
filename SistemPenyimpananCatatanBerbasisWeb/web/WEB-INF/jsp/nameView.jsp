@@ -13,16 +13,15 @@
     </head>
     <body>
         <h1>
-        <spring:nestedPath path="Login">
+        <spring:nestedPath path="name">
     <form action="" method="post">
-        Username:
-        <spring:bind path="username">
+        Name:
+        <spring:bind path="value">
             <input type="text" name="${status.expression}" value="${status.value}">
         </spring:bind>
-            <br>
-             Password:
-        <spring:bind path="password">
-            <input type="password" name="${status.expression}" value="${status.value}">
+             Age:
+        <spring:bind path="age">
+            <input type="text" name="${status.expression}" value="${status.value}">
         </spring:bind>
         <input type="submit" value="OK">
     </form>
